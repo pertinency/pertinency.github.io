@@ -1,32 +1,21 @@
-baseURL: https://aeon.blog/
 title: AEON.BLOG
+baseURL: https://aeon.blog/
 
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+theme: PaperMod
 
-enableInlineShortcodes: true
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
-enableGitInfo: true
-enableEmoji: true
-pygmentsUseClasses: true
+params:
+  env: production
+  comments: true
 
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-  parser:
-    attribute:
-      block: true
-      title: true
-  highlight:
-    linenos: true
-    noClasses: false
+  homeInfoParams:
+    Title: 🥞
+    Content: want some pancake?
+      
+  socialIcons:
+    - name: GitHub
+      url: https://github.com/toriato/
+    - name: Steam
+      url: https://steamcommunity.com/id/meltincat/
 
 languages:
   en:
@@ -51,41 +40,54 @@ languages:
         url: tags/
         weight: 10
 
+paginate: 10
+enableInlineShortcodes: true
+enableRobotsTXT: true
+enableGitInfo: true
+enableEmoji: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+pygmentsUseClasses: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  parser:
+    attribute:
+      block: true
+      title: true
+  highlight:
+    linenos: true
+    noClasses: false
+
 privacy:
-    vimeo:
-        disabled: false
-        simple: true
+  vimeo:
+    disabled: false
+    simple: true
 
-    twitter:
-        disabled: false
-        enableDNT: true
-        simple: true
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
 
-    instagram:
-        disabled: false
-        simple: true
+  instagram:
+    disabled: false
+    simple: true
 
-    youtube:
-        disabled: false
-        privacyEnhanced: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
 
 services:
-    instagram:
-        disableInlineCSS: true
-    twitter:
-        disableInlineCSS: true
+  instagram:
+    disableInlineCSS: true
 
-theme: PaperMod
-params:
-    env: production
-    author: Sangha Lee
+  twitter:
+    disableInlineCSS: true
 
-    profileMode:
-      enabled: true
-      title: AEON
-      
-    socialIcons:
-      - name: GitHub
-        url: https://github.com/toriato/
-      - name: Steam
-        url: https://steamcommunity.com/id/meltincat/
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
