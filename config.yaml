@@ -1,0 +1,91 @@
+baseURL: https://aeon.blog/
+title: AEON.BLOG
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableGitInfo: true
+enableEmoji: true
+pygmentsUseClasses: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  parser:
+    attribute:
+      block: true
+      title: true
+  highlight:
+    linenos: true
+    noClasses: false
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+      - name: 아카이브
+        url: archives
+        weight: 5
+      - name: 검색
+        url: search/
+        weight: 10
+      - name: 카테고리
+        url: categories/
+        weight: 10
+      - name: 태그
+        url: tags/
+        weight: 10
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
+
+theme: PaperMod
+params:
+    env: production
+    author: Sangha Lee
+
+    profileMode:
+      enabled: true
+      title: AEON
+      
+    socialIcons:
+      - name: GitHub
+        url: https://github.com/toriato/
+      - name: Steam
+        url: https://steamcommunity.com/id/meltincat/
