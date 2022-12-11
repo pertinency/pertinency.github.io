@@ -14,6 +14,8 @@ params:
   socialIcons:
     - name: GitHub
       url: https://github.com/toriato/
+    - name: YouTube
+      url: https://www.youtube.com/@a-on
     - name: Steam
       url: https://steamcommunity.com/id/meltincat/
 
