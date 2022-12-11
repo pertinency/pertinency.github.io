@@ -1,17 +1,18 @@
-{{/*
-기존 figure shortcode 를 번들 파일로부터 가져오게끔 변경함
-https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/shortcodes/figure.html
+{{ $src := .Get "src" }}
 
-나중에 필요하다면 이미지 처리하는 기능도 구현해야할듯
-https://gohugo.io/content-management/image-processing/
-*/}}
-{{ $img := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{/* URL scheme: https://www.ietf.org/rfc/rfc2396.txt */}}
+{{ $matches := findRE "^(/|\\.?/|[a-zA-Z0-9+-.]+://)" $src }}
+
+{{ if lt (len $matches) 1  }}
+    {{ $img := .Page.Resources.GetMatch (printf "*%s*" $src) }}
+    {{ $src = $img.RelPermalink }}
+{{ end }}
 
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
     {{- if .Get "link" -}}
         <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end -}}
-    <img src="{{ $img.RelPermalink }}"
+    <img src="{{ $src }}"
          {{- if or (.Get "alt") (.Get "caption") }}
          alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
          {{- end -}}
