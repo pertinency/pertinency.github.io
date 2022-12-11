@@ -1,0 +1,55 @@
+{{/* 표시할 텍스트가 비어있다면 목표 주소 띄우기 */}}
+{{- $text := .Text -}}
+{{- if not $text -}}
+  {{- $text = .Destination -}}
+{{- end -}}
+
+{{/*
+  마크다운 문법 중 주소 제목으로부터 HTML 속성 파싱해오기
+  [Link](https://example.com "Title (key='value')")
+
+  https://discourse.gohugo.io/t/how-can-i-add-rel-nofollow-or-target-blank-or-rel-external-or-other-similar-attributes-to-specific-links-in-my-posts-in-markdown/32131/7
+*/}}
+{{- $title := "" -}}
+{{- $attributes := dict -}}
+{{- with .Title -}}
+  {{- $parsed := partial "functions/parse-attribute-from-title.html" . -}}
+  {{- $title = $parsed.title -}}
+  {{- $attributes = $parsed.attributes -}}
+{{- end -}}
+
+<a
+  {{/* 메일 주소 */}}
+  {{ if hasPrefix .Destination "mailto:" -}}
+    href="mailto:{{ .Text }}"
+  
+  {{/* 외부 주소 */}}
+  {{- else if gt (len (findRE "^(/|\\.?/|[a-zA-Z0-9+-.]+://)" .Destination)) 0 -}}
+    href="{{ .Destination | safeURL }}"
+
+    {{/* TODO: 빈 속성 값을 받으면 정상적으로 동작하지 않음 */}}
+    {{- if not (index $attributes "target") -}}
+      target="_blank"
+    {{- end -}}
+
+    {{- if not (index $attributes "rel") -}}
+      rel="nofollow noopener noreferrer"
+    {{- end -}}
+
+  {{/* 내부 주소 */}}
+  {{- else -}}
+    href="{{ .Destination | safeURL }}"
+  {{- end -}}
+
+  {{- if and ($title) (not (index $attributes "rel")) -}}
+    {{- with $title }} title="{{ . }}"{{- end -}}
+  {{- end -}}
+
+  {{- with $attributes -}}
+    {{- range $k, $v := . -}}
+      {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}
+>
+  {{- $text | safeHTML -}}
+</a>
