@@ -1,0 +1,7 @@
+.paginav>a {
+  padding: 1rem;
+
+  @media screen and (max-width: 786px) {
+    padding: .25em;
+  }
+}
