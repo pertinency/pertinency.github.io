@@ -20,6 +20,15 @@ params:
     - name: Steam
       url: https://steamcommunity.com/id/meltincat/
 
+  cover:
+    responsiveImages: true
+    linkFullImages: true
+
+  ShowBreadCrumbs: true
+  ShowReadingTime: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true
+
 languages:
   en:
     languageName: English
