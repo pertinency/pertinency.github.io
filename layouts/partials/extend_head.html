@@ -1,0 +1,9 @@
+{{- $scss := resources.Get "css/extend/main.scss" -}}
+{{- $stylesheet := $scss | resources.ToCSS -}}
+
+{{- if not site.Params.assets.disableFingerprinting -}}
+{{- $stylesheet := $stylesheet | fingerprint -}}
+<link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}" rel="preload stylesheet" as="style">
+{{- else -}}
+<link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
+{{- end -}}

@@ -1,0 +1,9 @@
+a.footnote-ref {
+  &::before {
+    content: '[';
+  }
+
+  &::after {
+    content: ']';
+  }
+}
