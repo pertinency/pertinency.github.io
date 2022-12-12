@@ -18,38 +18,27 @@
   {{- $attributes = $parsed.attributes -}}
 {{- end -}}
 
+{{- if hasPrefix .Destination "mailto:" -}}
+  {{- $attributes = merge $attributes (dict "href" (printf "mailto:%s" .Text)) -}}
+{{- else if gt (len (findRE "^(/|\\.?/|[a-zA-Z0-9+-.]+://)" .Destination)) 0 -}}
+  {{- $attributes = merge $attributes (dict "href" (.Destination | safeURL)) -}}
+
+  {{/* TODO: 빈 속성 값을 받으면 정상적으로 동작하지 않음 */}}
+  {{- if not (index $attributes "target") -}}
+    {{- $attributes = merge $attributes (dict "target" "_blank") -}}
+  {{- end -}}
+
+  {{- if not (index $attributes "rel") -}}
+    {{- $attributes = merge $attributes (dict "rel" "nofollow noopener noreferrer") -}}
+  {{- end -}}
+{{- else -}}
+  {{- $attributes = merge $attributes (dict "href" (.Destination | safeURL)) -}}
+{{- end -}}
+
 <a
-  {{/* 메일 주소 */}}
-  {{ if hasPrefix .Destination "mailto:" -}}
-    href="mailto:{{ .Text }}"
-  
-  {{/* 외부 주소 */}}
-  {{- else if gt (len (findRE "^(/|\\.?/|[a-zA-Z0-9+-.]+://)" .Destination)) 0 -}}
-    href="{{ .Destination | safeURL }}"
-
-    {{/* TODO: 빈 속성 값을 받으면 정상적으로 동작하지 않음 */}}
-    {{- if not (index $attributes "target") -}}
-      target="_blank"
-    {{- end -}}
-
-    {{- if not (index $attributes "rel") -}}
-      rel="nofollow noopener noreferrer"
-    {{- end -}}
-
-  {{/* 내부 주소 */}}
-  {{- else -}}
-    href="{{ .Destination | safeURL }}"
-  {{- end -}}
-
-  {{- if and ($title) (not (index $attributes "rel")) -}}
-    {{- with $title }} title="{{ . }}"{{- end -}}
-  {{- end -}}
-
   {{- with $attributes -}}
     {{- range $k, $v := . -}}
       {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
     {{- end -}}
   {{- end -}}
->
-  {{- $text | safeHTML -}}
-</a>
+>{{- $text | safeHTML -}}</a>
