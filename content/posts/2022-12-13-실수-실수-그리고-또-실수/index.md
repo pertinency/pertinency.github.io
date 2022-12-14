@@ -1,8 +1,8 @@
 ---
 date: 2022-12-13 04:30:31 +0900
 title: 실수, 실수, 그리고 또 실수
-categories: [ 일기 ]
-tags: [ 잡담, 실수, 100DaysToOffload ]
+categories: [ diary ]
+tags: [ mistake, 100DaysToOffload ]
 ---
 사람들은 실수를 한다. 입보단 손가락으로 아주 많이 한다.
 

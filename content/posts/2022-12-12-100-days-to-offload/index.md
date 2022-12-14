@@ -1,8 +1,8 @@
 ---
 date: 2022-12-12 21:11:19 +0900
 title: 100 Days To Offload
-categories: [ 정보 ]
-tags: [ 정보, 글쓰기, 100DaysToOffload ]
+categories: [ writing ]
+tags: [ challenge, 100DaysToOffload ]
 ---
 
 다크 모드가 눈에 좋은지 아님 안 좋은지에 대한 글[^is-dark-mode-good-or-bad]을 읽던 도중 신기한 도전을 발견했다.

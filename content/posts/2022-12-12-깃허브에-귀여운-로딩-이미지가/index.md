@@ -1,8 +1,8 @@
 ---
 date: 2022-12-12 04:28:26 +0900
 title: 깃허브에 귀여운 로딩 이미지가... 
-categories: [ 일기 ]
-tags: [ 잡담, github, octocat, 100DaysToOffload ]
+categories: [ diary ]
+tags: [ github, octocat, 100DaysToOffload ]
 ---
 {{< figure src="https://github.githubassets.com/images/mona-loading.gif" class="center" width="200" >}}
 

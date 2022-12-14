@@ -1,8 +1,8 @@
 ---
 date: 2022-12-07 01:23:53 +0900
 title: 블로그
-categories: [ 일기 ]
-tags: [ 잡담, 인터넷, 100DaysToOffload ]
+categories: [ diary ]
+tags: [ internet, 100DaysToOffload ]
 ---
 블로그를 또 만들었다.
 

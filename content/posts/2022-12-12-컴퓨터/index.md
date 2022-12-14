@@ -1,8 +1,8 @@
 ---
 date: 2022-12-12 18:09:54 +0900
 title: 컴퓨터
-categories: [ 일기 ]
-tags: [ 잡담, 컴퓨터, 100DaysToOffload ]
+categories: [ diary ]
+tags: [ computer, 100DaysToOffload ]
 ---
 이틀의 휴일이 지나고 다시 편의점에 왔다.
 

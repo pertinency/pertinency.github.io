@@ -1,8 +1,8 @@
 ---
 date: 2022-12-13 18:20:52 +0900
 title: 눈보라
-categories: [ 일기 ]
-tags: [ 잡담, 눈, 100DaysToOffload ]
+categories: [ diary ]
+tags: [ snow, winter, 100DaysToOffload ]
 ---
 눈이 온다.
 
