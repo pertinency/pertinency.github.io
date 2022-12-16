@@ -2,7 +2,7 @@
 date: 2022-12-14 20:12:01 +0900
 title: 시티즈 멀티로 즐기기
 categories: [ diary ]
-tags: [ game, cities-skylines, csm, cream-installer ]
+tags: [ game, cities-skylines, csm, cream-installer, 100DaysToOffload ]
 ---
 요 몇 달간 게임을 못했다, 아니 안 했다.
 
