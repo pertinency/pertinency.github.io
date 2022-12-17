@@ -1,5 +1,5 @@
-title: AEON.BLOG
-baseURL: https://aeon.blog/
+title: 익명의 블로그
+baseURL: https://pertinency.github.io/
 
 theme: PaperMod
 
@@ -11,14 +11,7 @@ params:
   homeInfoParams:
     Title: 🥞
     Content: want some pancake?
-      
-  socialIcons:
-    - name: GitHub
-      url: https://github.com/toriato/
-    - name: YouTube
-      url: https://www.youtube.com/@a-on
-    - name: Steam
-      url: https://steamcommunity.com/id/meltincat/
+
 
   cover:
     responsiveImages: true
