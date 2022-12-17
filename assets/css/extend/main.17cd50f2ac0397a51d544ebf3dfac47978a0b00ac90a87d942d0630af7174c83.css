@@ -34,5 +34,5 @@ a.footnote-ref::after {
     .paginav > a {
       padding: .25em; } }
 .post-content {
-  word-break: keep-all;
+  word-break: break-all;
   text-align: justify; }
