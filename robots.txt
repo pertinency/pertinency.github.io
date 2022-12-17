@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://pertinency.github.io/sitemap.xml

@@ -1,0 +1,38 @@
+blockquote p:first-of-type {
+  font-style: italic; }
+  blockquote p:first-of-type::before {
+    font-size: 1.5em;
+    content: open-quote; }
+
+blockquote p:first-of-type::after {
+  font-size: 1.5em;
+  content: close-quote; }
+
+blockquote p:last-of-type::before {
+  /* &emdash;&nbsp; */
+  content: '\2014\00a0'; }
+
+.giscus {
+  margin-top: 1em; }
+
+figure figcaption {
+  text-align: center; }
+
+figure.center img {
+  margin-left: auto;
+  margin-right: auto; }
+
+a.footnote-ref::before {
+  content: '['; }
+
+a.footnote-ref::after {
+  content: ']'; }
+
+.paginav > a {
+  padding: 1rem; }
+  @media screen and (max-width: 786px) {
+    .paginav > a {
+      padding: .25em; } }
+.post-content {
+  word-break: keep-all;
+  text-align: justify; }
