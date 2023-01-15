@@ -28,6 +28,9 @@ a.footnote-ref::before {
 a.footnote-ref::after {
   content: ']'; }
 
+.post-content a[href] {
+  color: #ff6600; }
+
 .paginav > a {
   padding: 1rem; }
   @media screen and (max-width: 786px) {
